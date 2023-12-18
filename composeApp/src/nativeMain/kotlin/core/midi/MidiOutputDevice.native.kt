@@ -7,7 +7,7 @@ actual suspend fun OutputDevice.sendData(dataBytes: Array<Byte>) {
 }
 
 actual suspend fun OutputDevice.Companion.fetchDevices(): Array<OutputDevice> {
-
+    TODO("Not implemented yet")
 }
 
 actual suspend fun OutputDevice.sendNoteOn(channel: Int, pitch: Int, velocity: Int) {
