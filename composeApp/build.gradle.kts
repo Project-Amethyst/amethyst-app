@@ -60,7 +60,7 @@ android {
 
     defaultConfig {
         applicationId = "dev.anthonyhfm.amethyst"
-        minSdk = libs.versions.android.minSdk.get().toInt()
+        minSdk = 33
         targetSdk = libs.versions.android.targetSdk.get().toInt()
         versionCode = 1
         versionName = "1.0"

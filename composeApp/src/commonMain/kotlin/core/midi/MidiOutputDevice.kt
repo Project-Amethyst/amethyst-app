@@ -2,6 +2,7 @@ package core.midi
 
 data class OutputDevice(
     override val name: String,
+    override val internalDevice: Any? = null
 ) : MidiDevice {
     companion object
 }
