@@ -42,7 +42,7 @@ actual suspend fun InputDevice.openDevice(
         }
 
         override fun close() {
-            exitProcess(0)
+
         }
     }
 

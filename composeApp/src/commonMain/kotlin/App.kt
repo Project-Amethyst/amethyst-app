@@ -1,11 +1,11 @@
 
-import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
 import core.debug.LoopbackTestView
+import ui.AmethystTheme
 
 @Composable
 fun App() {
-    MaterialTheme {
+    AmethystTheme {
         LoopbackTestView()
     }
 }

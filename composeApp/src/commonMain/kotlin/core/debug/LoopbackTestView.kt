@@ -62,7 +62,6 @@ fun LoopbackTestView() {
                                 if (outputDevices!![selectedOutput!!].isOpen()) {
                                     val velocityChain = listOf(5, 9, 13, 17, 21, 25, 29, 33, 37, 41, 45, 0)
                                     scope.launch {
-                                        println(byteArray.toTypedArray())
                                         for (vel in velocityChain) {
                                             outputDevices!![selectedOutput!!].sendNoteOn(
                                                 channel = 0,
