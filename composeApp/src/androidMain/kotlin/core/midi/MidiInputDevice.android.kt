@@ -1,7 +1,25 @@
 package core.midi
 
+import android.media.midi.MidiDeviceInfo
+import dev.anthonyhfm.amethyst.midiManager
+
 actual suspend fun InputDevice.Companion.fetchDevices(): Array<InputDevice> {
-    TODO("Not implemented yet")
+    val deviceList: MutableList<InputDevice> = mutableListOf()
+
+    midiManager.devices.forEach { device ->
+        device.ports.forEach { port ->
+            if (port.type == MidiDeviceInfo.PortInfo.TYPE_INPUT) {
+                deviceList.add(
+                    InputDevice(
+                        port.name,
+                        port
+                    )
+                )
+            }
+        }
+    }
+
+    return deviceList.toTypedArray()
 }
 
 actual suspend fun InputDevice.openDevice(

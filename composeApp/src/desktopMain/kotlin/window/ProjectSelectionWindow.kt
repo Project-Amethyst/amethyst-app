@@ -84,7 +84,7 @@ fun ProjectSelectionWindow() {
                         ) {
                             Text(
                                 text = "Open a Project File",
-                                fontFamily = robotoFont,
+                                // fontFamily = robotoFont,
                                 fontSize = 16.sp,
                                 lineHeight = 16.sp
                             )
@@ -100,7 +100,7 @@ fun ProjectSelectionWindow() {
                         ) {
                             Text(
                                 text = "Create a new Project",
-                                fontFamily = robotoFont,
+                                // fontFamily = robotoFont,
                                 fontSize = 16.sp,
                                 lineHeight = 16.sp
                             )

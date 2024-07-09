@@ -1,7 +1,30 @@
 package core.midi
 
+import android.media.midi.MidiDevice
+import android.media.midi.MidiDeviceInfo
+import android.media.midi.MidiDeviceService
+import android.media.midi.MidiInputPort
+import android.os.Build
+import androidx.annotation.RequiresApi
+import dev.anthonyhfm.amethyst.midiManager
+
 actual suspend fun OutputDevice.Companion.fetchDevices(): Array<OutputDevice> {
-    TODO("Not implemented yet")
+    val deviceList: MutableList<OutputDevice> = mutableListOf()
+
+    midiManager.devices.forEach { device ->
+        device.ports.forEach { port ->
+            if (port.type == MidiDeviceInfo.PortInfo.TYPE_OUTPUT) {
+                deviceList.add(
+                    OutputDevice(
+                        port.name,
+                        port
+                    )
+                )
+            }
+        }
+    }
+
+    return deviceList.toTypedArray()
 }
 
 actual suspend fun OutputDevice.sendSysEx(dataBytes: Array<Byte>) {
